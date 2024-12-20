@@ -8,20 +8,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../style/process.css">
+    <title>Login</title>
 </head>
 <body>
-    <h1>Risk Management Login page</h1>
-    <p>Made by : ryanesok, bizer, DJ</p>
-    <form action="login-process.php" method="post">
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" placeholder="Username" required><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" placeholder="Password" required><br>
-        <input type="submit" name="login" value="Login">
-    </form>
-    <p id="register">don't have account?<a href="register.php">Register</a></p>
+<form action="login-process.php" method="post">
+    <div class="login-box">
+        <div class="login-header">
+            <header>Login</header>
+        </div>
+        <div class="input-box">
+            <input type="text" name="username" class="input-field" placeholder="Email" required>
+        </div>
+        <div class="input-box">
+            <input type="password" name="password" class="input-field" placeholder="Password" required>
+        </div>
+        <div class="input-submit">
+            <button class="submit-btn" id="submit" name="login"></button>
+            <label for="submit">Sign In</label>
+        </div>
+        <div class="sign-up-link">
+            <p>Don't have account? <a href="register.php">Sign Up</a></p>
+        </div>
+    </div>
+</form>
 </body>
 </html>
