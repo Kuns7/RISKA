@@ -36,10 +36,15 @@ class Database {
         return $rows;
     }
 
-    public function checkLogin(){
+    public function checkLogin($role){
         if(!isset($_SESSION["login"])){
+            
             echo "<script>alert('Anda Belum Login! Silahkan Login dahulu!'); document.location.href = '../process/login.php';</script>";
+            
             exit;
+        }
+        if($_SESSION["role"] != $role){
+            echo "<script>alert('Anda tidak memiliki akses terhadap $role'); document.location.href = '../index.php';</script>";
         }
     }
 

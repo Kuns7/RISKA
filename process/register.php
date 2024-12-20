@@ -8,38 +8,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/process.css">
     <title>Register Account</title>
 </head>
 <body>
-    <h1>Daftar Akun</h1>
-    <p>Sudah punya akun? <a href="login.php">Login</a></p>
-    <form action="register-process.php" method="post">
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" required><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" required><br>
-        <label for="role">Role:</label><br>
-        <select id="role" name="role" onchange="showMessage()" required>
-            <option value="">Pilih Role</option>
-            <?php foreach($enum_role as $role):?>
-                <option value="<?= $role;?>"><?= $role?></option>
-            <?php endforeach;?>
-        </select><br>
-        <p id="message"></p>
-        <input type="submit" value="Daftar">
+    <form action="login-process.php" method="post">
+    <class="login-box">
+        <div class="login-header">
+            <header>Daftar</header>
+        </div>
+        <div class="input-box">
+            <input type="text" name="username" class="input-field" placeholder="Email" required>
+        </div>
+        <div class="input-box">
+            <input type="password" name="password" class="input-field" placeholder="Password" required>
+        </div>
+        <input type="hidden" id="role" name="role" value="User" readonly></br>
+        <div class="input-submit">
+            <button class="submit-btn" id="submit" name="login"></button>
+            <label for="submit">Daftar</label>
+        </div>
+        <p>Sudah punya akun? <a href="login.php">Login</a></p>
     </form>
-    <script>
-        function showMessage() {
-            var role = document.getElementById("role").value;
-            if (role == "Admin") {
-                var message = "Admin membantu mencari solusi dan pencegahan masalah yang diajukan oleh user";
-                var confirmation = "Apakah Anda yakin ingin menjadi admin?";
-            } else if (role == "User") {
-                var message = "User memberikan keluhan dan masalah yang sedang berlangsung";
-                var confirmation = "Apakah Anda yakin ingin menjadi user?";
-            }
-            document.getElementById("message").innerHTML = message + "<br>" + confirmation;
-        }
-    </script>
 </body>
 </html>

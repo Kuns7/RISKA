@@ -1,5 +1,5 @@
 <?php
-require 'functions.php';
+require '../resources/functions.php';
 $db = new Database();
 
 // Ambil data dari form
